@@ -13,8 +13,17 @@ public class Stars
         String it = " ";
         
         smallToBig(it, maxNumber);
-          //oppositeBigToSmall();
-          //diamond();
+        
+        System.out.println("How many stars do you want in the longest row?");
+        int maxNumber2 = scan.nextInt();
+        String it2 = " ";
+        oppositeBigToSmall(it2, maxNumber2);
+        
+        
+        System.out.println("How many stars do you want in the middle(longest) row?");
+        int maxNumber3 = scan.nextInt();
+        String it3 = " ";
+        diamond(it3, maxNumber3);
 
         }
          public static void bigToSmall(){
@@ -45,5 +54,49 @@ public class Stars
             System.out.print(thing);
         }
         
+    }
+            public static void oppositeBigToSmall(String it2, int maxNumber2){
+
+        for (int rows = maxNumber2; rows >0 ; rows--){
+            print2(" ", (maxNumber2 - rows));
+            print2("*", rows);    
+            
+                 
+                
+            System.out.println();
+        }
+        
+    }
+    
+    public static void print2(String thing, int num) {
+        for(int i = 0; i < num; i++) {
+            System.out.print(thing);
+        }
+        
+    }
+                public static void diamond(String it3, int maxNumber3){
+
+        for (int rows = maxNumber3; rows >0 ; rows -=2){
+            
+            print3(" ", ((rows-1)/2));
+            print3("*", (maxNumber3 - (2*(rows-1)/2)));   
+            print3(" ", ((rows-1)/2));
+ 
+            System.out.println();
+        }
+        for (int rows = 0; rows < maxNumber3 ; rows +=2){
+            
+            print3(" ", ((maxNumber3 - rows) / 2));
+            print3("*", (maxNumber3 - rows));   
+            print3(" ", ((maxNumber3 - rows) /2));
+ 
+            System.out.println();
+        }
+        
+    }
+    public static void print3(String thing, int num) {
+        for(int i = 0; i < num; i++) {
+            System.out.print(thing);
+        }
     }
 }
